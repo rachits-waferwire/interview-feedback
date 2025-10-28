@@ -1122,8 +1122,21 @@ export default function RecruiterForm() {
               <input name="candidateLocation" value={formData.candidateLocation} onChange={handleChange} placeholder="Location" style={inputStyle} />
 
               <label style={labelStyle}>Work Site</label>
-              <input name="workSite" value={formData.workSite} onChange={handleChange} placeholder="Onsite / Remote" style={inputStyle} />
-            </div>
+              <select
+                name="workSite"
+                value={formData.workSite}
+                onChange={handleChange}
+                style={inputStyle}           /* use inputStyle from the file for consistent look */
+              /* If your file doesn't define `inputStyle`, use the line below instead:
+                style={{ background: "#0f1724", color: "#fff", border: "1px solid #374151", padding: "8px 10px", borderRadius: 6, width: "100%", boxSizing: "border-box" }}
+              */
+              >
+                <option value="">Choose an item.</option>
+                <option value="Onsite">Onsite</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Remote Only">Remote Only</option>
+              </select>
+          </div>
           </div>
 
           <div style={{ background: cardBg, padding: 18, borderRadius: 8 }}>
@@ -1137,9 +1150,12 @@ export default function RecruiterForm() {
               <label style={labelStyle}>Interview Level</label>
               <select name="interviewLevel" value={formData.interviewLevel} onChange={handleChange} style={inputStyle}>
                 <option value="">Choose an item.</option>
-                <option value="Junior">Junior</option>
-                <option value="Mid">Mid</option>
-                <option value="Senior">Senior</option>
+                <option value="L1">L1</option>
+                <option value="L2">L2</option>
+                <option value="L3">L3</option>
+                <option value="L4">L4</option>
+                <option value="L5">L5</option>
+                <option value="Hiring Manager">Hiring Manager</option>
               </select>
 
               <label style={labelStyle}>Role</label>
